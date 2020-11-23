@@ -7,4 +7,20 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'icons';
+
+  examples = [
+    'calendar-alt',
+    'calendar-check',
+    'calendar-minus',
+    'calendar-plus',
+    'calendar-times',
+    'caret-square-down',
+    'circle',
+    'clipboard',
+    'clock',
+    'clone',
+  ];
+  dynamicIconName = 'address-card';
+  radioIcon = 'caret-square-up';
+  color = 'black';
 }
