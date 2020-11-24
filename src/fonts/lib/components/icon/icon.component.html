@@ -1,5 +1,14 @@
 
-  <svg [class]="getClassList()">
-    <use [attr.xlink:href]="'assets/icons/regular.svg#' + iconName"></use>
-  </svg>
+  <span class="icon" *ngIf="current; else revers">
+    <svg [class]="getClassList()">
+      <use [attr.xlink:href]="'assets/icons/regular.svg#' + iconName"></use>
+    </svg>
+  </span>
+  <ng-template #revers>
+    <span class="icon">
+      <svg [class]="getClassList()">
+        <use [attr.xlink:href]="'assets/icons/regular.svg#' + iconName"></use>
+      </svg>
+    </span>
+  </ng-template>
 
