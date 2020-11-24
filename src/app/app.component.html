@@ -1,69 +1,65 @@
 <div [style.color]="color">
   <div>
     <label>
-      <input
-        type="radio"
-        name="icon"
-        value="red"
-        [(ngModel)]="color"
-      >
+      <input type="radio" name="icon" value="red" [(ngModel)]="color" />
       red
     </label>
     <label>
-      <input
-        type="radio"
-        name="icon"
-        value="green"
-        [(ngModel)]="color"
-      >
+      <input type="radio" name="icon" value="green" [(ngModel)]="color" />
       green
     </label>
     <label>
-      <input
-        type="radio"
-        name="icon"
-        value="blue"
-        [(ngModel)]="color"
-      >
+      <input type="radio" name="icon" value="blue" [(ngModel)]="color" />
       blue
     </label>
     <label>
-      <input
-        type="radio"
-        name="icon"
-        value="black"
-        [(ngModel)]="color"
-      >
+      <input type="radio" name="icon" value="black" [(ngModel)]="color" />
       black
     </label>
   </div>
-    <span class="fa fa-address-card"></span><span>tekst</span> <br>
+  <span class="fa fa-address-card"></span>
+  <span>tekst</span>
+  <br />
 
-    <ng-container *ngFor="let icon of examples">
-      <span [dynamicIconName]="icon" class="fa"></span><span>{{icon}}</span>
-      <br>
-    </ng-container>
+  <ng-container *ngFor="let icon of examples">
+    <span class="fa" [dynamicIconName]="icon"></span>
+    <span>{{ icon }}</span>
+    <br />
+  </ng-container>
   <app-icon iconName="chart-bar"></app-icon>
-
-
 </div>
 <div class="">
-  <hr>
+  <hr />
   change icon dynamic
-  <hr>
-  <label><input type="radio" name="icon" value="caret-square-down" [(ngModel)]="radioIcon">caret-square-down</label>
-  <label><input type="radio" name="icon" value="caret-square-left" [(ngModel)]="radioIcon">caret-square-left</label>
-  <label><input type="radio" name="icon" value="caret-square-right" [(ngModel)]="radioIcon">caret-square-right</label>
-  <label><input type="radio" name="icon" value="caret-square-up" [(ngModel)]="radioIcon">caret-square-up</label>
-  <br>
-  <span [dynamicIconName]="radioIcon" class="fa"></span><span>{{radioIcon}}</span>
-  <br>
+  <hr />
+  <label>
+    <input type="radio" name="icon" value="caret-square-down" [(ngModel)]="radioIcon" />
+    caret-square-down
+  </label>
+  <label>
+    <input type="radio" name="icon" value="caret-square-left" [(ngModel)]="radioIcon" />
+    caret-square-left
+  </label>
+  <label>
+    <input type="radio" name="icon" value="caret-square-right" [(ngModel)]="radioIcon" />
+    caret-square-right
+  </label>
+  <label>
+    <input type="radio" name="icon" value="caret-square-up" [(ngModel)]="radioIcon" />
+    caret-square-up
+  </label>
+  <br />
+  <span class="fa" [dynamicIconName]="radioIcon"></span>
+  <span>{{ radioIcon }}</span>
+  <br />
   use component directly
-  <br>
+  <br />
   <app-icon [iconName]="radioIcon"></app-icon>
 </div>
 
-
 <div class="" style="display: flex; justify-content: flex-end; margin: auto; max-width: 600px;">
-  <a href="https://github.com/freoff/icons" target="_blank"><app-icon iconName="github"></app-icon> Repo </a>
+  <a href="https://github.com/freoff/icons" target="_blank">
+    <app-icon iconName="github"></app-icon>
+    Repo
+  </a>
 </div>

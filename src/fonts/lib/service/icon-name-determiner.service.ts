@@ -1,15 +1,13 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from '@angular/core'
 
 @Injectable({
   providedIn: 'root'
 })
 export class IconNameDeterminerService {
-
-  constructor() { }
+  constructor() {}
 
   determine(classList: string): string {
-    const fontAwesomeIconRegex = /fa-(.*)\s?/;
-    return fontAwesomeIconRegex.exec(classList) && fontAwesomeIconRegex.exec(classList)[1];
-
+    const fontAwesomeIconRegex = /fa-(.*)\s?/
+    return fontAwesomeIconRegex.exec(classList) && fontAwesomeIconRegex.exec(classList)[1]
   }
 }

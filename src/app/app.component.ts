@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component } from '@angular/core'
 
 @Component({
   selector: 'app-root',
@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
-  title = 'icons';
+  title = 'icons'
 
   examples = [
     'calendar-alt',
@@ -18,9 +18,9 @@ export class AppComponent {
     'circle',
     'clipboard',
     'clock',
-    'clone',
-  ];
-  dynamicIconName = 'address-card';
-  radioIcon = 'caret-square-up';
-  color = 'black';
+    'clone'
+  ]
+  dynamicIconName = 'address-card'
+  radioIcon = 'caret-square-up'
+  color = 'black'
 }
