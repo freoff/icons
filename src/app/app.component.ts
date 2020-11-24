@@ -7,7 +7,7 @@ import { Component } from '@angular/core'
 })
 export class AppComponent {
   title = 'icons'
-
+  
   examples = [
     'calendar-alt',
     'calendar-check',
@@ -23,4 +23,7 @@ export class AppComponent {
   dynamicIconName = 'address-card'
   radioIcon = 'caret-square-up'
   color = 'black'
+  notWorking = [
+    'calendar-alt',
+    'calendar-check',]
 }

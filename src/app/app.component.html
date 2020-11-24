@@ -17,10 +17,27 @@
       black
     </label>
   </div>
+  <hr>
+  standar fa fa-ICON-NAME span element
+  <hr>
   <span class="fa fa-address-card"></span>
+  <span>card icon</span>
+  <br />
+  <span class="fa fa-clipboard"></span>
   <span>tekst</span>
   <br />
+  <hr>
+  dynamic class name in .fa wont work eq: <code>class="fa fa-{{'{'}}{{'{'}}icon{{'}'}}"></code>
+  <hr>
+  <ng-container *ngFor="let icon of examples">
+    <span class="fa fa-{{icon}}"></span>
+    <span>{{ icon }}</span>
+    <br />
+  </ng-container>
 
+  <hr>
+  with dynamic  dynamicIconName, property of fontDirective
+  <hr>
   <ng-container *ngFor="let icon of examples">
     <span class="fa" [dynamicIconName]="icon"></span>
     <span>{{ icon }}</span>
