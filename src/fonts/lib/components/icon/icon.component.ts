@@ -1,18 +1,29 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core'
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnChanges, SimpleChanges } from '@angular/core'
 import { ieVersion } from '../../helpers/ieVersion'
 
 @Component({
   selector: 'app-icon',
   templateUrl: './icon.component.html',
-  styleUrls: ['./icon.component.sass']
+  styleUrls: ['./icon.component.sass'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class IconComponent implements OnChanges {
+export class IconComponent {
   current = true
   isIE = true
-  @Input()
-  iconName: string
+  
+  get iconName(): string {
+    return this._iconName
+  }
 
-  constructor() {
+  @Input()
+  set iconName(value: string) {
+    this._iconName = value
+    if (this.isIE) this.current = !this.current
+    // 
+    this.chdr.markForCheck()
+  }
+
+  constructor(private chdr: ChangeDetectorRef) {
     this.isIE = ieVersion() === 11
   }
 
@@ -20,9 +31,5 @@ export class IconComponent implements OnChanges {
     return `icon icon-${this.iconName}`
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
-    if (changes && changes.iconName && this.isIE) {
-      this.current = !this.current
-    }
-  }
+  private _iconName: string
 }

@@ -1,10 +1,10 @@
-<span *ngIf="current; else revers" class="icon">
+<span *ngIf="current; else revers" class="icon a">
   <svg [class]="getClassList()">
     <use [attr.xlink:href]="'assets/icons/regular.svg#' + iconName"></use>
   </svg>
 </span>
 <ng-template #revers>
-  <span class="icon">
+  <span class="icon b">
     <svg [class]="getClassList()">
       <use [attr.xlink:href]="'assets/icons/regular.svg#' + iconName"></use>
     </svg>

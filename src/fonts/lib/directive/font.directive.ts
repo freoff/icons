@@ -36,11 +36,7 @@ export class FontDirective implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.dynamicIconName && this.component) {
-      if (ieVersion() === 11) {
-        this.addIconComponent(changes.dynamicIconName.currentValue)
-      } else {
-        this.component.instance.iconName = this.dynamicIconName
-      }
+      this.component.instance.iconName = this.dynamicIconName
     }
   }
 
